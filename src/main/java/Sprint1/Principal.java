@@ -7,6 +7,7 @@ public class Principal {
         System.out.println("Primer Commit Amparo Clavijo");
 
         System.out.println("Primer comentario de Jhonatan Chavarro Arias");
+        System.out.println("Primer commit de German Castro");
 
 
         System.out.println();
