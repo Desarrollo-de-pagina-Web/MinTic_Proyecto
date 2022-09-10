@@ -6,6 +6,13 @@ public class Empresa {
     private String telefono;
     private String nit;
 
+    public Empresa(String nombre, String direccion, String telefono, String nit) {
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.nit = nit;
+    }
+
     public String getNombre() {
         return nombre;
     }

@@ -12,6 +12,12 @@ private  String correoEmpleado;
 private  tipo_Rol tipo;
 private Empresa  emp;
 
+    public Empleado(String nombreEmpleado, String correoEmpleado, tipo_Rol tipo, Empresa emp) {
+        this.nombreEmpleado = nombreEmpleado;
+        this.correoEmpleado = correoEmpleado;
+        this.tipo = tipo;
+        this.emp = emp;
+    }
 
     public String getNombreEmpleado() {
         return nombreEmpleado;
