@@ -12,11 +12,9 @@ public class MovimientoDinero {
         public long getId() {
             return Id;
         }
-
         public String getConcepto() {
             return Concepto;
         }
-
         public float getCantidad() {
             return Cantidad;
         }
