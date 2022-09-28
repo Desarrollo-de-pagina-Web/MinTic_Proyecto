@@ -1,11 +1,21 @@
 package Sprint2;
-import java.util.Date;
 
 public class MovimientoDinero {
     public class Transaccion {
+
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private long Id;
+
+        @Column(name = "Concepto")
         private String Concepto;
+
+        @Column(name = "Cantidad")
         private float Cantidad;
+
+        public Transaccion(float cantidad) {
+            Cantidad = cantidad;
+        }
         //private Date createdAt;
         //private Date updatedAt;
 
@@ -19,6 +29,18 @@ public class MovimientoDinero {
             return Cantidad;
         }
 
+
+        public void setId(long id) {
+            Id = id;
+        }
+
+        public void setConcepto(String concepto) {
+            Concepto = concepto;
+        }
+
+        public void setCantidad(float cantidad) {
+            Cantidad = cantidad;
+        }
     }
 
 
