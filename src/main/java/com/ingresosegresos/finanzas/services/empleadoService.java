@@ -92,6 +92,28 @@ public Response createEmpleado(Empleado data){
     }
 
 
+    public Response updateEmpleName(Empleado data) {
+        Response response = new Response();
+        if (data.getId() == 0) {
+            response.setCode(500);
+            response.setMessage("Error el id del usuario no es valido");
+            return response;
+        }
+
+        //validamos si el usuario que desea actualizar existe
+        Empleado exists = selectById(data.getId());
+        if (exists == null) {
+            response.setCode(500);
+            response.setMessage("Error el usuario no existe en la base de datos");
+            return response;
+        }
+        exists.setNombreEmpleado(data.getNombreEmpleado());
+        this.empleRepository.save(exists);
+        response.setCode(200);
+        response.setMessage("Usuario modificado exitosamente");
+
+        return  response;
+    }
 
 
 

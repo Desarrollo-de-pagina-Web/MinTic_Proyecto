@@ -10,24 +10,34 @@ public class Empleado {
     private int id;
     @Column(name="nombres")
     private  String nombreEmpleado;
+    @Column(name="numerodocumento")
+    private String numeroDocumento;
     @Column(name="email")
     private  String correoEmpleado;
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     @Column(name="rol")
     private  tipo_Rol tipo;
+    @Column(name="password",length = 200)
+    private String password;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="miembroempresa")
     private Empresa emp;
+    @OneToOne
+    @JoinColumn(name = "tipodocumentoid")
+    private Tipodocumento tipodocumento;
+
 
 public Empleado(){
 
 }
 
 
-    public Empleado(String nombreEmpleado, String correoEmpleado, Empresa emp,int id) {
+    public Empleado(String nombreEmpleado, String correoEmpleado, Empresa emp,int id,String password,String numeroDocumento) {
         this.nombreEmpleado = nombreEmpleado;
         this.correoEmpleado = correoEmpleado;
         this.id=id;
+        this.password=password;
+        this.numeroDocumento=numeroDocumento;
 
     }
 
@@ -72,6 +82,30 @@ public Empleado(){
 
     public void setEmp(Empresa emp) {
         this.emp = emp;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getNumeroDocumento() {
+        return numeroDocumento;
+    }
+
+    public void setNumeroDocumento(String numeroDocumento) {
+        this.numeroDocumento = numeroDocumento;
+    }
+
+    public Tipodocumento getTipodocumento() {
+        return tipodocumento;
+    }
+
+    public void setTipodocumento(Tipodocumento tipodocumento) {
+        this.tipodocumento = tipodocumento;
     }
 }
 

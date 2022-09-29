@@ -53,6 +53,3 @@ public class empleadoController {
 
 
     }
-
-
-//controller
